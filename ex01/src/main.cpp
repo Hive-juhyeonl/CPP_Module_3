@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: JuHyeon <JuHyeon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: juhyeonl <juhyeonl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 02:11:13 by JuHyeon           #+#    #+#             */
-/*   Updated: 2026/01/02 02:24:25 by JuHyeon          ###   ########.fr       */
+/*   Updated: 2026/01/17 13:40:25 by juhyeonl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ void	test_scavtrap()
 		std::cout << "=== TEST 4: ScavTrap Special Features ===\n" << std::endl;
 		ScavTrap s("Serena"); 
 		s.attack("Target");
+		s.guardGate();
 		s.guardGate();
 	}
 	wait_for_enter();

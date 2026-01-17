@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: JuHyeon <JuHyeon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: juhyeonl <juhyeonl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 02:11:25 by JuHyeon           #+#    #+#             */
-/*   Updated: 2026/01/02 02:11:26 by JuHyeon          ###   ########.fr       */
+/*   Updated: 2026/01/17 13:21:51 by juhyeonl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,9 @@ void test_death(void)
 	clear_screen();
 	std::cout << "=== TEST 3: Death Handling (0 HP) ===\n" << std::endl;
 	ClapTrap d("Delta");
-	d.takeDamage(100);
-	d.takeDamage(1); 
+	d.takeDamage(9);
+	d.takeDamage(2);
+	d.takeDamage(1);
 	d.attack("Enemy");
 	d.beRepaired(10);
 	wait_for_enter();

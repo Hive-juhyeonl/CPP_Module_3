@@ -6,7 +6,7 @@
 /*   By: JuHyeon <JuHyeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 02:39:57 by JuHyeon           #+#    #+#             */
-/*   Updated: 2026/01/02 06:30:00 by JuHyeon          ###   ########.fr       */
+/*   Updated: 2026/01/02 02:41:44 by JuHyeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 FragTrap::FragTrap() : ClapTrap()
 {
-	this->_name = "Default";
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
 	this->_attackDamage = 30;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: JuHyeon <JuHyeon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: juhyeonl <juhyeonl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 02:11:13 by JuHyeon           #+#    #+#             */
-/*   Updated: 2026/01/02 06:20:24 by JuHyeon          ###   ########.fr       */
+/*   Updated: 2026/01/17 14:43:58 by juhyeonl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,51 +29,47 @@ void	wait_for_enter()
 }
 
 // 1. Basic Actions Test
-void	test_basics()
+void test_basics(void)
 {
-	{
-		clear_screen();
-		std::cout << "=== TEST 1: Basic Interactions ===\n" << std::endl;
-		ClapTrap a("Alpha");
-		ClapTrap b("Beta");
-		a.attack("Beta");
-		b.takeDamage(0);
-		b.beRepaired(5);
-	}
+	clear_screen();
+	std::cout << "=== TEST 1: Basic Interactions ===\n" << std::endl;
+	ClapTrap a("Alpha");
+	ClapTrap b("Beta");
+	a.attack("Beta");
+	b.takeDamage(0);
+	b.beRepaired(5);
+
 	wait_for_enter();
 }
 
 // 2. Energy Depletion Test
-void	test_energy()
+void test_energy(void)
 {
+	clear_screen();
+	std::cout << "=== TEST 2: Energy Depletion ===\n" << std::endl;
+	ClapTrap c("Charlie");
+	for (int i = 1; i <= 11; i++)
 	{
-		clear_screen();
-		std::cout << "=== TEST 2: Energy Depletion ===\n" << std::endl;
-		ClapTrap c("Charlie");
-		for (int i = 1; i <= 11; i++)
-		{
-			if (i < 10)
+		if (i < 10)
 			std::cout << "Attack #" << i << " : ";
-			else
+		else
 			std::cout << "Attack #" << i << ": ";
-			c.attack("Target");
-		}
+		c.attack("Target");
 	}
 	wait_for_enter();
 }
 
 // 3. Death Test
-void	test_death()
+void test_death(void)
 {
-	{
-		clear_screen();
-		std::cout << "=== TEST 3: Death Handling (0 HP) ===\n" << std::endl;
-		ClapTrap d("Delta");
-		d.takeDamage(100);
-		d.takeDamage(1); 
-		d.attack("Enemy");
-		d.beRepaired(10);
-	}
+	clear_screen();
+	std::cout << "=== TEST 3: Death Handling (0 HP) ===\n" << std::endl;
+	ClapTrap d("Delta");
+	d.takeDamage(9);
+	d.takeDamage(2);
+	d.takeDamage(1);
+	d.attack("Enemy");
+	d.beRepaired(10);
 	wait_for_enter();
 }
 
@@ -83,8 +79,9 @@ void	test_scavtrap()
 	{
 		clear_screen();
 		std::cout << "=== TEST 4: ScavTrap Special Features ===\n" << std::endl;
-		ScavTrap s("Eagle"); 
+		ScavTrap s("Serena"); 
 		s.attack("Target");
+		s.guardGate();
 		s.guardGate();
 	}
 	wait_for_enter();
@@ -97,7 +94,7 @@ void	test_fragtrap()
 		clear_screen();
 		std::cout << "=== TEST 5: FragTrap (High Five) ===\n" << std::endl;
         FragTrap f("Fox");
-        f.attack("Enemy");
+        f.attack("Enemy");	// seg fault
         f.highFivesGuys();
 	}
 	wait_for_enter();
@@ -109,7 +106,7 @@ void	test_diamondtrap()
 	{
 		clear_screen();
 		std::cout << "=== TEST 6: DiamondTrap (whoAmI) ===\n" << std::endl;
-		DiamondTrap g("Golf");
+		DiamondTrap g("Golf");	// seg fault
 		g.whoAmI();
 		g.attack("Target");
 		g.guardGate();
@@ -133,7 +130,7 @@ int	main()
 		std::cout << "3. Death Check (What happens at 0 HP?)" << std::endl;
 		std::cout << "4. ScavTrap Test" << std::endl;
 		std::cout << "5. FragTrap Test" << std::endl;
-		std::cout << "5. DiamondTrap Test(NEW!)" << std::endl;
+		std::cout << "6. DiamondTrap Test(NEW!)" << std::endl;
 		std::cout << "0. Exit" << std::endl;
 		std::cout << "\nSelect a test > ";
 		
@@ -161,6 +158,8 @@ int	main()
 			test_scavtrap();
 		else if (input == 5)
 			test_fragtrap();
+		else if (input == 6)
+			test_diamondtrap();
 	}
 	return (0);
 }

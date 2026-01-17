@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: JuHyeon <JuHyeon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: juhyeonl <juhyeonl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 23:56:25 by JuHyeon           #+#    #+#             */
-/*   Updated: 2026/01/02 01:53:36 by JuHyeon          ###   ########.fr       */
+/*   Updated: 2026/01/17 13:38:19 by juhyeonl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ parent member status	|	public	|	protected	|	private		|
 */
 class ScavTrap : public ClapTrap
 {
+	private:
+		bool	_keeperMode;
 	public:
 		ScavTrap();
 		ScavTrap(std::string name);
