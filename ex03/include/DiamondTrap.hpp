@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: JuHyeon <JuHyeon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: juhyeonl <juhyeonl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 04:21:47 by JuHyeon           #+#    #+#             */
-/*   Updated: 2026/01/02 06:16:28 by JuHyeon          ###   ########.fr       */
+/*   Updated: 2026/01/17 15:31:38 by juhyeonl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ ScavTrap		FragTrap
 
 There is two ClapTrap so it need 'virtual' front of each parents class
 */
-class DiamondTrap : public FragTrap, public ScavTrap
+class DiamondTrap : public ScavTrap, public FragTrap
 {
 	private:
 		std::string _name;

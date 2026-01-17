@@ -6,7 +6,7 @@
 /*   By: juhyeonl <juhyeonl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 05:43:38 by JuHyeon           #+#    #+#             */
-/*   Updated: 2026/01/17 15:09:45 by juhyeonl         ###   ########.fr       */
+/*   Updated: 2026/01/17 15:39:07 by juhyeonl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,20 @@ DiamondTrap::DiamondTrap()
 }
 
 DiamondTrap::DiamondTrap(std::string name)
-	: ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name)
+	: ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name)
 {
 	this->_name = name;
 	this->_hitPoints = FragTrap::_hitPoints;
+	std::cout << "Scav => ad: " << ScavTrap::_attackDamage << " / ep: " << ScavTrap::_energyPoints << std::endl;
+	std::cout << "Frag => ad: " << FragTrap::_attackDamage << " / ep: " << FragTrap::_energyPoints << std::endl;
 	this->_energyPoints = ScavTrap::_energyPoints;
 	this->_attackDamage = FragTrap::_attackDamage;
+	std::cout << "this => ad: " << this->_attackDamage << " / ep: " << this->_energyPoints << std::endl;
 	std::cout << "DiamondTrap " << this->_name << " constructor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& other)
-	: ClapTrap(other), FragTrap(other), ScavTrap(other)
+	: ClapTrap(other), ScavTrap(other), FragTrap(other)
 {
 	this->_name = other._name;
 	std::cout << "DiamondTrap copy constructor called" << std::endl;
