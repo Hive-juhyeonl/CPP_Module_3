@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: JuHyeon <JuHyeon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: juhyeonl <juhyeonl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 16:58:16 by JuHyeon           #+#    #+#             */
-/*   Updated: 2026/01/02 00:08:51 by JuHyeon          ###   ########.fr       */
+/*   Updated: 2026/01/17 15:08:16 by juhyeonl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class   ClapTrap
 		unsigned int	_attackDamage;
 	public:
 		ClapTrap();
-		~ClapTrap();
+		virtual ~ClapTrap();
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap& other);
 		ClapTrap& operator=(const ClapTrap& other);
