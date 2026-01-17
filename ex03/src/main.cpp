@@ -6,7 +6,7 @@
 /*   By: juhyeonl <juhyeonl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 02:11:13 by JuHyeon           #+#    #+#             */
-/*   Updated: 2026/01/17 14:43:58 by juhyeonl         ###   ########.fr       */
+/*   Updated: 2026/01/17 16:33:57 by juhyeonl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,13 @@ int	main()
 {
 	int input;
 
+	// shadow test
+	// int	i = 10;
+	// {
+	// 	int	i = 5;
+	// 	std::cout << "inner : " << i << std::endl;
+	// }
+	// std::cout << "outer : " << i << std::endl;
 	while (1)
 	{
 		clear_screen();

@@ -3,16 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: JuHyeon <JuHyeon@student.42.fr>            +#+  +:+       +#+         #
+#    By: juhyeonl <juhyeonl@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/01 16:47:57 by JuHyeon           #+#    #+#              #
-#    Updated: 2026/01/02 06:28:19 by JuHyeon          ###   ########.fr        #
+#    Updated: 2026/01/17 16:26:04 by juhyeonl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = diamondTrap
 CC		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98 -Iinclude
+SHADOWFLAG = -Wall -Wextra -Werror -std=c++98 -Wshadow -Iinclude
 RM		= rm -rf
 
 SRC_DIR	= ./src
@@ -36,6 +37,9 @@ $(NAME): $(OBJ)
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	@mkdir -p $(@D)
 	@$(CC) $(CFLAGS) -c $< -o $@
+
+shadow: fclean
+	@make $(NAME) CFLAGS="$(SHADOWFLAG)"
 
 clean:
 	@$(RM) $(OBJ_DIR)
